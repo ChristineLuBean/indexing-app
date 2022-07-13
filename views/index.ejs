@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sec 401 Index</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>SEC 401 Index</h1>
+
+    <form action="/addTool" method="POST" class="index-entry-form">
+      <label for="bookNum">Book Number:</label>
+      <select name="bookNum" id="bookNum">
+        <option value="">Book Number</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <label for="sectionNum">Section Number:</label>
+      <select name="sectionNum" id="sectionNum">
+        <option value="">Section Number</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+      <label for="pagesNum">Page(s):</label>
+      <input
+        type="text"
+        name="pagesNum"
+        id="pagesNum"
+        placeholder="1-100"
+      />
+      <label for="toolName">Tool Name:</label>
+      <input
+        type="text"
+        name="toolName"
+        id="toolName"
+        placeholder="Tool Name"
+      />
+      <label for="toolComment">Comments:</label>
+      <textarea name="toolComment" id="toolComment">Comments</textarea>
+      <input type="submit" />
+    </form>
+
+    <table class="index">
+      <tr>
+        <th>Tool</th>
+        <th>Book</th>
+        <th>Section</th>
+        <th>Page(s)</th>
+        <th>Comment</th>
+        <th>Delete?</th>
+      </tr>
+      <% for(let i=0; i < info.length; i++) {%>
+      <tr class="index-entry">
+        <td><%=  info[i].toolName %></td>
+        <td><%=  info[i].bookNum %></td>
+        <td><%= info[i].sectionNum %></td>
+        <td><%=  info[i].pagesNum %></td>
+        <td><%=  info[i].toolComment %></td>
+        <td><div class="delete-btn">X</div></td>
+      </tr>
+      <% } %>
+    </table>
+    <script src="js/main.js"></script>
+  </body>
+</html>

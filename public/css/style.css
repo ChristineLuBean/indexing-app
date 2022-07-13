@@ -1,0 +1,13 @@
+    table *{
+        border: 3px solid gray;
+    }
+    .delete-btn {
+        cursor: pointer;
+    }
+    .delete-btn:hover {
+        background: gray;
+        color: white;
+    }
+    .delete-btn:active {
+        background: black;
+    }
